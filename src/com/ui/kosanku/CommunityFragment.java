@@ -1,6 +1,5 @@
 package com.ui.kosanku;
 
-import info.androidhive.slidingmenu.R;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;

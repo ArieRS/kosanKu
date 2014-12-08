@@ -1,9 +1,8 @@
 package com.ui.adapter;
 
-import info.androidhive.slidingmenu.R;
-
 import java.util.ArrayList;
 
+import com.ui.kosanku.R;
 import com.ui.model.NavDrawerItem;
 
 import android.app.Activity;

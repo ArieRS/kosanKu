@@ -1,6 +1,5 @@
 package com.ui.kosanku;
 
-import info.androidhive.slidingmenu.R;
 
 import java.util.ArrayList;
 
