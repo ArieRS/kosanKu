@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 kosanku
 =======
 ini adalah tugas proyek sistem informasi geografis pencarian tempat kos menggunakan google API
@@ -7,8 +7,5 @@ Arie Rachmad .S
 Milyun Ni'ma .S
 Wina Permana .S
 Akmal Gafar .P
-<br/>
-=======
-kosanKu
-=======
->>>>>>> 8bc0b9c21316e31615ebe8c7a20f2374b5578dd6
+
+
