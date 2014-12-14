@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp">
 
     <RelativeLayout
         android:id="@+id/relImageCariKos"
@@ -14,7 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/relImageCariKos"
-        android:text="@string/rentang_harga" />
+        android:text="@string/rentang_harga"
+        android:textSize="18sp"
+        android:layout_marginTop="20sp"/>
 
     <SeekBar
         android:id="@+id/seekBarHarga"
@@ -22,6 +25,118 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tvRentangHarga"
-        android:layout_marginTop="44dp" />
+        android:layout_marginTop="30dp" />
 
+    <TextView
+        android:id="@+id/tvLokasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBarHarga"
+        android:layout_marginTop="30dp"
+        android:text="@string/lokasi"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/linLokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tvLokasi"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/spinProvinsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/provinsi" />
+
+        <EditText
+            android:id="@+id/spinKota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kota" />
+
+        <EditText
+            android:id="@+id/spinKelurahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kelurahan" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvFasilitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linLokasi"
+        android:layout_marginTop="30dp"
+        android:text="@string/fasilitas"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/checkTempatTidur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempat_tidur"
+        android:layout_below="@+id/tvFasilitas"
+        android:layout_marginTop="30dp"
+        android:checked="false" />
+
+    <CheckBox
+        android:id="@+id/checkLemari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lemari"
+        android:layout_below="@+id/checkTempatTidur"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:id="@+id/checkMejaBelajar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meja_belajar"
+        android:layout_below="@+id/checkLemari"
+        android:layout_marginTop="10dp"
+        android:checked="false" />
+
+    <CheckBox
+        android:id="@+id/checkKamarMandi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kamar_mandi_dalam"
+        android:layout_toRightOf="@+id/checkTempatTidur"
+        android:layout_alignBaseline="@+id/checkTempatTidur"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:checked="false" />
+
+    <CheckBox
+        android:id="@+id/checkAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ac"
+        android:checked="false"
+        android:layout_above="@+id/checkMejaBelajar"
+        android:layout_alignLeft="@+id/checkKamarMandi"
+        android:layout_alignStart="@+id/checkKamarMandi" />
+
+    <CheckBox
+        android:id="@+id/checkWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wifi"
+        android:checked="false"
+        android:layout_alignTop="@+id/checkMejaBelajar"
+        android:layout_alignLeft="@+id/checkAC"
+        android:layout_alignStart="@+id/checkAC" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cari"
+        android:layout_below="@+id/checkMejaBelajar"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:textSize="18dp"/>
 </RelativeLayout>

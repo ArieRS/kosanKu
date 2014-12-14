@@ -7,16 +7,16 @@
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
     
-    <!-- Nav Drawer Menu Items -->
+   <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
-        <item >Home</item>
-        <item >Find People</item>
-        <item >Photos</item>
-        <item >Communities</item>
-        <item >Pages</item>
-        <item >What\'s Hot</item>
+        <item>Home</item>
+        <item>Login</item>
+        <item>Cari Kos</item>
+        <item>Tambah Kos</item>
+        <item>Profil</item>
+        <item>Dertail Kos</item>
     </string-array>
-    
+
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
@@ -27,12 +27,48 @@
         <item>@drawable/ic_pages</item>
         <item>@drawable/ic_whats_hot</item>
     </array>
-    
+
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
 
     <!-- fragment carikos -->
-    <string name="rentang_harga">Rentang Harga</string> 
-        
-    
+    <string name="rentang_harga">Rentang Harga</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="kota">Kota</string>
+    <string name="kelurahan">Kelurahan</string>
+    <string name="fasilitas">Fasilitas</string>
+
+    <!-- Fasilitas -->
+    <string name="tempat_tidur">Tempat Tidur</string>
+    <string name="lemari">Lemari</string>
+    <string name="meja_belajar">Meja Belajar</string>
+    <string name="kamar_mandi_dalam">Kamar Mandi Dalam</string>
+    <string name="ac">AC</string>
+    <string name="wifi">WIFI</string>
+
+    <!-- tambah kos -->
+    <string name="tambah_kos">Tambah Kos</string>
+    <string name="nama_kos">Nama Kos</string>
+    <string name="alamat">Alamat</string>
+    <string name="no_telpon">No Telepon</string>
+    <string name="jenis_kos">Jenis Kos</string>
+    <string name="harga_sewa">Harga Sewa</string>
+    <string name="fasilitas_kos">Fasilitas Kos</string>
+    <string name="fasilitas_sekitar">Fasilitas Sekitar</string>
+    <string name="unggah_gambar">Unggah Gambar</string>
+    <string name="tag_lokasi_kos"></string>
+    <string name="simpan">Simpan</string>
+    <string name="batal">Batal</string>
+    <string name="profil">profil</string>
+    <!-- general -->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="signin">Signin</string>
+    <string name="Signup">Signup</string>
+    <string name="cari">Cari</string>
+    <string name="login">Login</string>
+    <string name="nearby">Nearby</string>
+    <string name="setting">Setting</string>
+    <string name="title_activity_fragment_lokasi_kos">Map</string>
 </resources>

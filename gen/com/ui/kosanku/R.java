@@ -52,17 +52,50 @@ public final class R {
         public static final int list_selector=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000a;
+        public static final int action_settings=0x7f0a002b;
+        public static final int buttonBatalTambahKos=0x7f0a002a;
+        public static final int buttonSimpanTambahKos=0x7f0a0029;
+        public static final int checkAC=0x7f0a0013;
+        public static final int checkKamarMandi=0x7f0a0012;
+        public static final int checkLemari=0x7f0a0010;
+        public static final int checkMejaBelajar=0x7f0a0011;
+        public static final int checkTempatTidur=0x7f0a000f;
+        public static final int checkWifi=0x7f0a0014;
         public static final int counter=0x7f0a0005;
         public static final int drawer_layout=0x7f0a0000;
+        public static final int edtAlamatTambahKos=0x7f0a001e;
+        public static final int edtFasilitasSekitarTambahKos=0x7f0a0028;
+        public static final int edtFasilitasTambahKos=0x7f0a0026;
+        public static final int edtHargaSewaTambahKos=0x7f0a0024;
+        public static final int edtJenisKosTambahKos=0x7f0a0022;
+        public static final int edtNamaTambahKos=0x7f0a001c;
+        public static final int edtNoTelpnTambahKos=0x7f0a0020;
         public static final int frame_container=0x7f0a0001;
         public static final int icon=0x7f0a0003;
+        public static final int linLokasi=0x7f0a000a;
         public static final int list_slidermenu=0x7f0a0002;
         public static final int relImageCariKos=0x7f0a0006;
+        public static final int relTambahKos=0x7f0a001a;
         public static final int seekBarHarga=0x7f0a0008;
+        public static final int spinKelurahan=0x7f0a000d;
+        public static final int spinKota=0x7f0a000c;
+        public static final int spinProvinsi=0x7f0a000b;
         public static final int title=0x7f0a0004;
+        public static final int tvAlamatTambahKos=0x7f0a001d;
+        public static final int tvFasilitas=0x7f0a000e;
+        public static final int tvFasilitasSekitarTambahKos=0x7f0a0027;
+        public static final int tvFasilitasTambahKos=0x7f0a0025;
+        public static final int tvHargaSewaTambahKos=0x7f0a0023;
+        public static final int tvJenisTambahKos=0x7f0a0021;
+        public static final int tvLogin=0x7f0a0016;
+        public static final int tvLokasi=0x7f0a0009;
+        public static final int tvNamaTambahKos=0x7f0a001b;
+        public static final int tvNoTelpnTambahKos=0x7f0a001f;
+        public static final int tvPassword=0x7f0a0018;
         public static final int tvRentangHarga=0x7f0a0007;
-        public static final int txtLabel=0x7f0a0009;
+        public static final int tvTambahKos=0x7f0a0019;
+        public static final int tvUsername=0x7f0a0017;
+        public static final int txtLabel=0x7f0a0015;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -71,25 +104,67 @@ public final class R {
         public static final int fragment_community=0x7f030003;
         public static final int fragment_find_people=0x7f030004;
         public static final int fragment_home=0x7f030005;
-        public static final int fragment_pages=0x7f030006;
-        public static final int fragment_photos=0x7f030007;
-        public static final int fragment_whats_hot=0x7f030008;
+        public static final int fragment_login=0x7f030006;
+        public static final int fragment_pages=0x7f030007;
+        public static final int fragment_photos=0x7f030008;
+        public static final int fragment_profile=0x7f030009;
+        public static final int fragment_tambah_kos=0x7f03000a;
+        public static final int fragment_whats_hot=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f090000;
     }
     public static final class string {
+        public static final int Signup=0x7f060022;
+        public static final int ac=0x7f060010;
         public static final int action_settings=0x7f060001;
+        public static final int alamat=0x7f060014;
         public static final int app_name=0x7f060000;
+        public static final int batal=0x7f06001d;
+        public static final int cari=0x7f060023;
         /**  Content Description 
          */
         public static final int desc_list_item_icon=0x7f060005;
         public static final int drawer_close=0x7f060004;
         public static final int drawer_open=0x7f060003;
+        public static final int fasilitas=0x7f06000b;
+        public static final int fasilitas_kos=0x7f060018;
+        public static final int fasilitas_sekitar=0x7f060019;
+        public static final int harga_sewa=0x7f060017;
         public static final int hello_world=0x7f060002;
+        public static final int jenis_kos=0x7f060016;
+        public static final int kamar_mandi_dalam=0x7f06000f;
+        public static final int kelurahan=0x7f06000a;
+        public static final int kota=0x7f060009;
+        public static final int lemari=0x7f06000d;
+        public static final int login=0x7f060024;
+        public static final int lokasi=0x7f060007;
+        public static final int meja_belajar=0x7f06000e;
+        public static final int nama_kos=0x7f060013;
+        public static final int nearby=0x7f060025;
+        public static final int no_telpon=0x7f060015;
+        public static final int password=0x7f060020;
+        public static final int profil=0x7f06001e;
+        public static final int provinsi=0x7f060008;
         /**  fragment carikos 
          */
         public static final int rentang_harga=0x7f060006;
+        public static final int setting=0x7f060026;
+        public static final int signin=0x7f060021;
+        public static final int simpan=0x7f06001c;
+        public static final int tag_lokasi_kos=0x7f06001b;
+        /**  tambah kos 
+         */
+        public static final int tambah_kos=0x7f060012;
+        /**  Fasilitas 
+         */
+        public static final int tempat_tidur=0x7f06000c;
+        public static final int title_activity_fragment_lokasi_kos=0x7f060027;
+        public static final int unggah_gambar=0x7f06001a;
+        /**  general 
+         */
+        public static final int username=0x7f06001f;
+        public static final int wifi=0x7f060011;
     }
     public static final class style {
         /** 
@@ -118,5 +193,6 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
+        public static final int text18sp=0x7f080002;
     }
 }
