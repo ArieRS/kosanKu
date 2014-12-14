@@ -22,8 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String TABLE_KOSAN = "kosan";
 	private static final String TABLE_INF_LOKASI = "inf_lokasi";
 	private static final String TABLE_TLU_FASILITAS = "tlu_fasilitas";
-	private static final String TABLE_MASTER_TYPE_LOKASI = "master_type_lokasi";
-	private static final String TABLE_MASTER_PENYAKIT_SAPI = "master_penyakit_sapi";
+	private static final String TABLE_FASILITAS_KOS = "fasilitas_kos";
+	private static final String TABLE_WP_USER = "wp_users";
+	
 	
 	// TABLE_KOSAN Table - column names
 	private static final String KEY_ID = "id";
@@ -38,12 +39,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String KEY_LATITUDE = "latitude";
 	private static final String KEY_NAMA_CP = "nama_cp";
 	private static final String KEY_TELP_CP = "telp_cp";
-	private static final String KEY_ID_LOKASI = "telp_cp";
-
+	private static final String KEY_ID_LOKASI = "id_lokasi";
+	
+	
+	// inf_lokasi Table - column names
+	private static final String KEY_LOKASI_ID = "lokasi_ID";
+	private static final String KEY_KODE = "lokasi_kode";
+	private static final String KEY_LOKASI_NAMA = "lokasi_nama";
+	private static final String KEY_LOKASI_PROPINSI = "lokasi_propinsi";
+	private static final String KEY_LOKASI_KABUPATENKOTA = "lokasi_kabupatenkota";
+	private static final String KEY_LOKASIKECAMATAN = "lokasi_kecamatan";
+	private static final String KEY_KELURAHAN = "lokasi_kelurahan";
 	
 	// TABLE_INF_LOKASI Table - column names
 	private static final String KEY_TLU_ID = "id";
 	private static final String KEY_TLU_NAMA = "nama";
+	
+	// TABLE_FASILITAS_KOS - column names
+	private static final String KEY_FASILITAS_ID = "id";
+	private static final String KEY_FASILITAS_ID_KOS = "id_kos";
+	private static final String KEY_FASILITAS_ID_FASILITAS = "id_fasilitas";
+	
+	// TABLE_WP_USER Table - column names
+	private static final String KEY_User_ID = "ID";
+	private static final String KEY_User_LOGIN = "user_login";
+	private static final String KEY_User_PASS = "user_pass";
+	private static final String KEY_User_NICENAME = "user_nicename";
+	private static final String KEY_User_EMAIL = "user_email";
+	private static final String KEY_User_URL= "user_url";
+	private static final String KEY_User_REGISTERED = "user_registered";
+	private static final String KEY_User_ACTIVATION = "user_activation_key";
+	private static final String KEY_User_STATUS = "user_status";
+	private static final String KEY_User_DISPLAY_NAME = "display_name";
+	
+	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		
