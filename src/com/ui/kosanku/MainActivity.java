@@ -2,10 +2,9 @@ package com.ui.kosanku;
 
 
 import java.util.ArrayList;
-
 import com.ui.adapter.NavDrawerListAdapter;
 import com.ui.model.NavDrawerItem;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -39,6 +38,7 @@ public class MainActivity extends Activity {
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -85,6 +85,7 @@ public class MainActivity extends Activity {
 
 		// enabling action bar app icon and behaving it as toggle button
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		//getActionBar().setHomeAsUpIndicator(R.drawable.ic_drawer);
 		getActionBar().setHomeButtonEnabled(true);
 
 		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
@@ -180,7 +181,7 @@ public class MainActivity extends Activity {
 			fragment = new ProfilFragment();
 			break;
 		case 5:
-			fragment = new ProfilFragment();
+			fragment = new LokasiKosDetailFragment();
 			break;
 
 		default:
