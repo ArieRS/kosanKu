@@ -7,14 +7,18 @@
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
     
-   <!-- Nav Drawer Menu Items -->
-    <string-array name="nav_drawer_items">
-        <item>Home</item>
-        <item>Login</item>
+    
+     <string-array name="nav_drawer_items_user">
         <item>Cari Kos</item>
-        <item>Tambah Kos</item>
+        <item>Login</item>
+    </string-array>
+   <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items_member">
         <item>Profil</item>
-        <item>Dertail Kos</item>
+        <item>Tambah Kos</item>
+        <item>Cari Kos</item>
+        <item>Nearby</item>
+        <item>Logout</item>
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->
@@ -24,8 +28,6 @@
         <item>@drawable/add</item>
         <item>@drawable/nearby</item>
         <item>@drawable/profile</item>
-        <item>@drawable/add</item>
-        <item>@drawable/ic_whats_hot</item>
     </array>
 
     <!-- Content Description -->
@@ -46,6 +48,8 @@
     <string name="kamar_mandi_dalam">Kamar Mandi Dalam</string>
     <string name="ac">AC</string>
     <string name="wifi">WIFI</string>
+    <string name="dapur">Dapur Bersama</string>
+    
 
     <!-- tambah kos -->
     <string name="tambah_kos">Tambah Kos</string>

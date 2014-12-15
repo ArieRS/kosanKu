@@ -12,10 +12,11 @@ public final class R {
         /**  Nav Drawer List Item Icons 
  Keep them in order as the titles are in 
          */
-        public static final int nav_drawer_icons=0x7f090001;
+        public static final int nav_drawer_icons=0x7f090002;
         /**  Nav Drawer Menu Items 
          */
-        public static final int nav_drawer_items=0x7f090000;
+        public static final int nav_drawer_items_member=0x7f090001;
+        public static final int nav_drawer_items_user=0x7f090000;
     }
     public static final class attr {
         /** 
@@ -531,14 +532,14 @@ containing a value of this type.
         public static final int main=0x7f0a0000;
     }
     public static final class string {
-        public static final int Signup=0x7f050045;
+        public static final int Signup=0x7f050046;
         public static final int ac=0x7f050033;
         public static final int accept=0x7f050002;
         public static final int action_settings=0x7f050024;
-        public static final int alamat=0x7f050037;
+        public static final int alamat=0x7f050038;
         public static final int app_name=0x7f050023;
-        public static final int batal=0x7f050040;
-        public static final int cari=0x7f050046;
+        public static final int batal=0x7f050041;
+        public static final int cari=0x7f050047;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
         public static final int common_android_wear_notification_needs_update_text=0x7f050009;
@@ -640,6 +641,7 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f050020;
         public static final int create_calendar_message=0x7f050005;
         public static final int create_calendar_title=0x7f050004;
+        public static final int dapur=0x7f050035;
         public static final int decline=0x7f050003;
         /**  Content Description 
          */
@@ -647,44 +649,44 @@ containing a value of this type.
         public static final int drawer_close=0x7f050027;
         public static final int drawer_open=0x7f050026;
         public static final int fasilitas=0x7f05002e;
-        public static final int fasilitas_kos=0x7f05003b;
-        public static final int fasilitas_sekitar=0x7f05003c;
-        public static final int harga_sewa=0x7f05003a;
+        public static final int fasilitas_kos=0x7f05003c;
+        public static final int fasilitas_sekitar=0x7f05003d;
+        public static final int harga_sewa=0x7f05003b;
         public static final int hello_world=0x7f050025;
-        public static final int jenis_kos=0x7f050039;
+        public static final int jenis_kos=0x7f05003a;
         public static final int kamar_mandi_dalam=0x7f050032;
         public static final int kelurahan=0x7f05002d;
         public static final int kota=0x7f05002c;
         public static final int lemari=0x7f050030;
-        public static final int login=0x7f050047;
+        public static final int login=0x7f050048;
         public static final int lokasi=0x7f05002a;
         public static final int meja_belajar=0x7f050031;
-        public static final int nama_kos=0x7f050036;
-        public static final int nearby=0x7f050048;
-        public static final int no_telpon=0x7f050038;
-        public static final int password=0x7f050043;
-        public static final int profil=0x7f050041;
+        public static final int nama_kos=0x7f050037;
+        public static final int nearby=0x7f050049;
+        public static final int no_telpon=0x7f050039;
+        public static final int password=0x7f050044;
+        public static final int profil=0x7f050042;
         public static final int provinsi=0x7f05002b;
         /**  fragment carikos 
          */
         public static final int rentang_harga=0x7f050029;
-        public static final int setting=0x7f050049;
-        public static final int signin=0x7f050044;
-        public static final int simpan=0x7f05003f;
+        public static final int setting=0x7f05004a;
+        public static final int signin=0x7f050045;
+        public static final int simpan=0x7f050040;
         public static final int store_picture_message=0x7f050001;
         public static final int store_picture_title=0x7f050000;
-        public static final int tag_lokasi_kos=0x7f05003e;
+        public static final int tag_lokasi_kos=0x7f05003f;
         /**  tambah kos 
          */
-        public static final int tambah_kos=0x7f050035;
+        public static final int tambah_kos=0x7f050036;
         /**  Fasilitas 
          */
         public static final int tempat_tidur=0x7f05002f;
-        public static final int title_activity_fragment_lokasi_kos=0x7f05004a;
-        public static final int unggah_gambar=0x7f05003d;
+        public static final int title_activity_fragment_lokasi_kos=0x7f05004b;
+        public static final int unggah_gambar=0x7f05003e;
         /**  general 
          */
-        public static final int username=0x7f050042;
+        public static final int username=0x7f050043;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

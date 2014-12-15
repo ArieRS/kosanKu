@@ -2,12 +2,14 @@ package com.ui.kosanku;
 
 
 import java.util.ArrayList;
-import com.ui.adapter.NavDrawerListAdapter;
-import com.ui.model.NavDrawerItem;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -19,6 +21,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.ui.adapter.NavDrawerListAdapter;
+import com.ui.common.SessionManager;
+import com.ui.model.NavDrawerItem;
 
 public class MainActivity extends Activity {
 	private DrawerLayout mDrawerLayout;
@@ -38,50 +44,55 @@ public class MainActivity extends Activity {
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
 
+	private SessionManager mSessionManager;
+	Context mContext;
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		mContext = MainActivity.this;
+		mSessionManager = new SessionManager(mContext);
+		
+		
 		mTitle = mDrawerTitle = getTitle();
 
-		// load slide menu items
-		navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
-
-		// nav drawer icons from resources
-		navMenuIcons = getResources()
-				.obtainTypedArray(R.array.nav_drawer_icons);
+		
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
 
 		navDrawerItems = new ArrayList<NavDrawerItem>();
-
-		// adding nav drawer items to array
-		// Home
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-		// Find People
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-		// Photos
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-		// Communities, Will add a counter here
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "22"));
-		// Pages
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
-		// What's hot, We  will add a counter here
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
 		
+		if (mSessionManager.isLogin()){
+			navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items_user);
+			navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
+			
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(1, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(0, -1)));
+		}else {
+			navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items_member);
+			navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
 
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(3, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(2, -1)));//, true, "22"));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(2, -1)));
+		}
+		
+		
 		// Recycle the typed array
 		navMenuIcons.recycle();
-
 		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
 		// setting the nav drawer list adapter
-		adapter = new NavDrawerListAdapter(getApplicationContext(),
-				navDrawerItems);
+		adapter = new NavDrawerListAdapter(getApplicationContext(),navDrawerItems);
+		adapter.notifyDataSetChanged();
 		mDrawerList.setAdapter(adapter);
+		
 
 		// enabling action bar app icon and behaving it as toggle button
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -164,28 +175,43 @@ public class MainActivity extends Activity {
 	private void displayView(int position) {
 		// update the main content by replacing fragments
 		Fragment fragment = null;
-		switch (position) {
-		case 0:
+		String menuString = navMenuTitles[position];
+		
+		if (menuString.equalsIgnoreCase("Cari Kos")) {
 			fragment = new CariKosFragment();
-			break;
-		case 1:
+		}
+		else if (menuString.equalsIgnoreCase("Login")) {
 			fragment = new LoginFragment();
-			break;
-		case 2:
-			fragment = new CariKosFragment();
-			break;
-		case 3:
-			fragment = new TambahKosFrgament();
-			break;
-		case 4:
+		}
+		else if (menuString.equalsIgnoreCase("Profil")) {
 			fragment = new ProfilFragment();
-			break;
-		case 5:
+		}
+		else if (menuString.equalsIgnoreCase("Tambah Kos")) {
+			fragment = new TambahKosFrgament();
+		}
+		else if (menuString.equalsIgnoreCase("Nearby")) {
 			fragment = new LokasiKosDetailFragment();
-			break;
+		}
+		else if (menuString.equalsIgnoreCase("Logout")) {
+			new AlertDialog.Builder(this)
+			.setIcon(android.R.drawable.ic_dialog_alert)
+			.setTitle("Really Exit?")
+			.setMessage("Exit kosanKu App")
+			.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					 displayView(0);
+				}
+			})
+			.setPositiveButton(android.R.string.yes,
+					new DialogInterface.OnClickListener() {
 
-		default:
-			break;
+						public void onClick(DialogInterface arg0,
+								int arg1) {
+									mSessionManager.Logout();
+									MainActivity.this.finish();
+						}
+					}).create().show();
 		}
 
 		if (fragment != null) {
