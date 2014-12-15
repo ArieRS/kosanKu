@@ -31,8 +31,7 @@ public class SessionManager {
 	}
 
 	public void createLoginSession(String username, String password,
-			String peran, int id_level_admin, int id_kabupaten_kota,
-			int id_provinsi) {
+			String peran) {
 		editor =  pref.edit();
 		editor.putBoolean(IS_LOGIN, true);
 		editor.putString(KEY_USERNAME, username);
