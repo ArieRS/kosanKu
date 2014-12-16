@@ -79,4 +79,6 @@
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="gps_location">GPS Location</string>
+    
+    <string name="url_add_kosan">http://152.118.37.39/sig/application/add_kosan.php</string>
 </resources>
