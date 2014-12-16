@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent"
     android:layout_marginLeft="15dp">
 
@@ -183,3 +184,226 @@
         android:text="@string/kamar_mandi_dalam" />
 
 </RelativeLayout>
+=======
+    android:layout_height="match_parent" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp" >
+
+        <TextView
+            android:id="@+id/tvTambahKos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="@string/tambah_kos"
+            android:textSize="30sp" />
+
+        <!--
+         <ScrollView
+        android:id="@+id/scrollTambahKos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/tvTambahKos"
+        android:layout_above="@+id/buttonSimpanTambahKos">
+        -->
+
+        <RelativeLayout
+            android:id="@+id/relTambahKos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTambahKos"
+            android:layout_centerHorizontal="true" >
+
+            <TextView
+                android:id="@+id/tvNamaTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/nama_kos" />
+
+            <EditText
+                android:id="@+id/edtNamaTambahKos"
+                style="@style/text18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvNamaTambahKos"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/tvNamaTambahKos"
+                android:hint="@string/nama_kos" />
+
+            <TextView
+                android:id="@+id/tvAlamatTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNamaTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/alamat" />
+
+            <EditText
+                android:id="@+id/edtAlamatTambahKos"
+                style="@style/text18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvAlamatTambahKos"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:layout_toRightOf="@+id/tvAlamatTambahKos"
+                android:hint="@string/alamat" />
+
+            <TextView
+                android:id="@+id/tvNoTelpnTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAlamatTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/no_telpon" />
+
+            <EditText
+                android:id="@+id/edtNoTelpnTambahKos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvNoTelpnTambahKos"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:layout_toRightOf="@+id/tvNoTelpnTambahKos"
+                android:hint="@string/no_telpon" />
+
+            <TextView
+                android:id="@+id/tvJenisTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNoTelpnTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/jenis_kos" />
+
+            <EditText
+                android:id="@+id/edtJenisKosTambahKos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvJenisTambahKos"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:layout_toRightOf="@+id/tvJenisTambahKos"
+                android:hint="@string/jenis_kos" />
+
+            <TextView
+                android:id="@+id/tvHargaSewaTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvJenisTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/harga_sewa" />
+
+            <EditText
+                android:id="@+id/edtHargaSewaTambahKos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvHargaSewaTambahKos"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:layout_toRightOf="@+id/tvHargaSewaTambahKos"
+                android:hint="@string/harga_sewa" />
+
+            <TextView
+                android:id="@+id/tvFasilitasTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHargaSewaTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/fasilitas_kos" />
+
+            <EditText
+                android:id="@+id/edtFasilitasTambahKos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvFasilitasTambahKos"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:hint="@string/fasilitas_kos" />
+
+            <TextView
+                android:id="@+id/tvFasilitasSekitarTambahKos"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtFasilitasTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/fasilitas_sekitar" />
+
+            <EditText
+                android:id="@+id/edtFasilitasSekitarTambahKos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvFasilitasSekitarTambahKos"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:hint="@string/fasilitas_sekitar" />
+
+            <TextView
+                android:id="@+id/tvLatitude"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvFasilitasSekitarTambahKos"
+                android:layout_marginTop="15dp"
+                android:text="@string/latitude" />
+
+            <EditText
+                android:id="@+id/edtlatitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvLatitude"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:hint="@string/latitude" />
+
+            <TextView
+                android:id="@+id/tvLongitude"
+                style="@style/text18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLatitude"
+                android:layout_marginTop="15dp"
+                android:text="@string/longitude" />
+
+            <EditText
+                android:id="@+id/edtlongitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvLongitude"
+                android:layout_alignLeft="@+id/edtNamaTambahKos"
+                android:hint="@string/longitude" />
+
+            <Button
+                android:id="@+id/buttonGPS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtlongitude"
+                android:layout_marginTop="15dp"
+                android:text="@string/gps_location" />
+        </RelativeLayout>
+        <!-- </ScrollView> -->
+
+        <Button
+            android:id="@+id/buttonSimpanTambahKos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relTambahKos"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@+id/buttonBatalTambahKos"
+            android:text="@string/simpan" />
+
+        <Button
+            android:id="@+id/buttonBatalTambahKos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/relTambahKos"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/batal" />
+    </RelativeLayout>
+
+</ScrollView>
+>>>>>>> 9329d8a446af6d08a8d8c7f9d09c00c9a04cca11

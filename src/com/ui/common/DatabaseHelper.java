@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -73,14 +74,106 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String KEY_User_DISPLAY_NAME = "display_name";
 	
 	
+	private static final String CREATE_TABLE_KOSAN = "CREATE TABLE "
+			+ TABLE_KOSAN
+			+ " ( "
+			+ KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ KEY_NAMA + " TEXT, "
+			+ KEY_ALAMAT + " TEXT, "
+			+ KEY_HARGA_MIN + " TEXT, "
+			+ KEY_HARGA_MAX + " TEXT, "
+			+ KEY_FOTO + " TEXT, "
+			+ KEY_JUMLAH_KAMAR + " TEXT, "
+			+ KEY_FASILITAS + " TEXT , "
+			+ KEY_LONGITUDE + " TEXT, "
+			+ KEY_LATITUDE + " TEXT, "
+			+ KEY_NAMA_CP + " TEXT, "
+			+ KEY_TELP_CP + " TEXT, "
+			+ KEY_ID_LOKASI + " TEXT"
+			+ " ) ";
+	
+	private static final String CREATE_TABLE_TLU_FASILITAS = " CREATE TABLE "
+			+ TABLE_TLU_FASILITAS
+			+ " ( "
+			+ KEY_LOKASI_ID + " TEXT, "
+			+ KEY_KODE + " TEXT, "
+			+ KEY_LOKASI_NAMA + " TEXT, "
+			+ KEY_LOKASI_PROPINSI + " TEXT, "
+			+ KEY_LOKASI_KABUPATENKOTA + " TEXT, "
+			+ KEY_LOKASIKECAMATAN + " TEXT, "
+			+ KEY_KELURAHAN + " TEXT"
+			+ " ) ";
+
+	private static final String CREATE_TABLE_INF_LOKASI = " CREATE TABLE "
+			+ TABLE_TLU_FASILITAS
+			+ " ( "
+			+ KEY_LOKASI_ID + " TEXT, "
+			+ KEY_KODE + " TEXT, "
+			+ KEY_LOKASI_NAMA + " TEXT, "
+			+ KEY_LOKASI_PROPINSI + " TEXT, "
+			+ KEY_LOKASI_KABUPATENKOTA + " TEXT, "
+			+ KEY_LOKASIKECAMATAN + " TEXT, "
+			+ KEY_KELURAHAN + " TEXT"
+			+ " ) ";	
+	
+	private static final String CREATE_TABLE_FASILITAS_KOS = " CREATE TABLE "
+			+ TABLE_FASILITAS_KOS
+			+ " ( "
+			+ KEY_FASILITAS_ID + " TEXT, "
+			+ KEY_FASILITAS_ID_KOS + " TEXT, "
+			+ KEY_FASILITAS_ID_FASILITAS + " TEXT"
+			+ " ) ";
+
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		
+		db.execSQL(CREATE_TABLE_KOSAN);
+		db.execSQL(CREATE_TABLE_TLU_FASILITAS);
+		db.execSQL(CREATE_TABLE_INF_LOKASI);
+		db.execSQL(CREATE_TABLE_FASILITAS_KOS);
+		try {
+			Log.d("create", "sukses");
+		} catch (Exception e) {
+			Log.d("creat", e.getMessage());
+		}
 	}
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		
+		if (newVersion > oldVersion){
+			db.execSQL("DROP TABLE IF EXISTS " + TABLE_KOSAN);
+			db.execSQL("DROP TABLE IF EXISTS " + TABLE_TLU_FASILITAS);
+			db.execSQL("DROP TABLE IF EXISTS " + TABLE_INF_LOKASI);
+			db.execSQL("DROP TABLE IF EXISTS " + TABLE_FASILITAS_KOS);
+			onCreate(db);
+		}
 	}
+	public void deleteAllTable(Context context){
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_KOSAN);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TLU_FASILITAS);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_INF_LOKASI);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_FASILITAS_KOS);
+		
+		context.deleteDatabase(DB_PATH + DATABASE_NAME);
+	}
+	// closing database
+	public void closeDB() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		if (db != null && db.isOpen())
+			db.close();
+	}
+
+	@Override
+	public synchronized void close() {
+		closeDB();
+	}
+	
+	//////////////////////query/////////////
+	//////////////////////query/////////////
+	
+	
+	
+	///////////////////end query/////////////
+	//////////////////end query/////////////
 
 }
 

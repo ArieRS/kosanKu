@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
 
 		navDrawerItems = new ArrayList<NavDrawerItem>();
 		
-		if (mSessionManager.isLogin()){
+		if (mSessionManager.isLogin() ==  false){
 			navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items_user);
 			navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
 			

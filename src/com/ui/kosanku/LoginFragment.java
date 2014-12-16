@@ -30,7 +30,7 @@ public class LoginFragment extends Fragment {
         edtusername = (EditText) rootView.findViewById(R.id.edtUsername);
         edtpass = (EditText) rootView.findViewById(R.id.edtPassword);
         buttonLogin = (Button) rootView.findViewById(R.id.buttonLogin);
-        
+        session = new SessionManager(getActivity());
         logicControl();
         return rootView;
     }

@@ -77,8 +77,17 @@
     <string name="nearby">Nearby</string>
     <string name="setting">Setting</string>
     <string name="title_activity_fragment_lokasi_kos">Map</string>
+<<<<<<< HEAD
     <!-- Profile -->
     <string name="nama">Nama</string>
     <string name="alamat_profile">Alamat</string>
     <string name="no_telp">No. Telepon</string>
+=======
+    
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="gps_location">GPS Location</string>
+    
+    <string name="url_add_kosan">http://152.118.37.39/sig/application/add_kosan.php</string>
+>>>>>>> 9329d8a446af6d08a8d8c7f9d09c00c9a04cca11
 </resources>
