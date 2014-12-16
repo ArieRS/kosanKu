@@ -70,16 +70,17 @@ public class MainActivity extends Activity {
 			navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items_user);
 			navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
 			
-			navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(1, -1)));
-			navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(0, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
 		}else {
 			navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items_member);
 			navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
 
-			navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(3, -1)));
-			navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-			navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-			navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(2, -1)));//, true, "22"));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(3, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(4, -1)));
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(1, -1)));//, true, "22"));
 			navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(2, -1)));
 		}
 		
@@ -177,13 +178,13 @@ public class MainActivity extends Activity {
 		Fragment fragment = null;
 		String menuString = navMenuTitles[position];
 		
-		if (menuString.equalsIgnoreCase("Cari Kos")) {
+		if (menuString.equalsIgnoreCase("Home")) {
 			fragment = new CariKosFragment();
 		}
 		else if (menuString.equalsIgnoreCase("Login")) {
 			fragment = new LoginFragment();
 		}
-		else if (menuString.equalsIgnoreCase("Profil")) {
+		else if (menuString.equalsIgnoreCase("Profile")) {
 			fragment = new ProfilFragment();
 		}
 		else if (menuString.equalsIgnoreCase("Tambah Kos")) {

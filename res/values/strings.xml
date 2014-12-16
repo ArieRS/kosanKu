@@ -9,14 +9,15 @@
     
     
      <string-array name="nav_drawer_items_user">
-        <item>Cari Kos</item>
+        <item>Home</item>
+        <item>Nearby</item>
         <item>Login</item>
     </string-array>
    <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items_member">
-        <item>Profil</item>
-        <item>Tambah Kos</item>
-        <item>Cari Kos</item>
+        <item>Home</item>
+        <item>Profile</item>
+        <item>Tambah Kos</item>        
         <item>Nearby</item>
         <item>Logout</item>
     </string-array>
@@ -24,10 +25,11 @@
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
-        <item>@drawable/login</item>
-        <item>@drawable/add</item>
+        <item>@drawable/home</item>
         <item>@drawable/nearby</item>
+        <item>@drawable/login</item>
         <item>@drawable/profile</item>
+        <item>@drawable/add</item>
     </array>
 
     <!-- Content Description -->
@@ -56,7 +58,7 @@
     <string name="nama_kos">Nama Kos</string>
     <string name="alamat">Alamat</string>
     <string name="no_telpon">No Telepon</string>
-    <string name="jenis_kos">Jenis Kos</string>
+    <string name="jumlah_kamar">Jumlah Kamar</string>
     <string name="harga_sewa">Harga Sewa</string>
     <string name="fasilitas_kos">Fasilitas Kos</string>
     <string name="fasilitas_sekitar">Fasilitas Sekitar</string>
@@ -75,4 +77,8 @@
     <string name="nearby">Nearby</string>
     <string name="setting">Setting</string>
     <string name="title_activity_fragment_lokasi_kos">Map</string>
+    <!-- Profile -->
+    <string name="nama">Nama</string>
+    <string name="alamat_profile">Alamat</string>
+    <string name="no_telp">No. Telepon</string>
 </resources>

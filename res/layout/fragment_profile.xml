@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-    <TextView
+    <EditText
+        android:id="@+id/edtNama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="string/pro"/>
+        android:layout_alignRight="@+id/edtAlamatProfile"
+        android:layout_below="@+id/tvNama"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10"
+        android:hint="@string/nama" />
+
+    <TextView
+        android:id="@+id/tvNama"
+        style="@style/text18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtNama"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="64dp"
+        android:text="@string/nama" />
+
+    <TextView
+        android:id="@+id/tvAlamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtNama"
+        android:layout_below="@+id/edtNama"
+        android:layout_marginTop="20dp"
+        android:text="@string/alamat_profile"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvTelpon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtAlamatProfile"
+        android:layout_centerVertical="true"
+        android:text="@string/no_telp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonSimpanProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtTelpon"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="59dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/simpan" />
+
+    <Button
+        android:id="@+id/buttonBatalProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonSimpanProfile"
+        android:layout_alignBottom="@+id/buttonSimpanProfile"
+        android:layout_toRightOf="@+id/buttonSimpanProfile"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/batal" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edtAlamatProfile"
+        android:layout_alignParentLeft="true"
+        android:minHeight="90dp"
+        android:minWidth="90dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/profil" />
+
+    <EditText
+        android:id="@+id/edtAlamatProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAlamat"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10"
+        android:hint="@string/alamat_profile"
+        android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id="@+id/edtTelpon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTelpon"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10"
+        android:hint="@string/no_telp"
+        android:inputType="phone" >
+
+        <requestFocus />
+    </EditText>
+
 </RelativeLayout>
