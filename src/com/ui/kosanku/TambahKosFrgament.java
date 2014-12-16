@@ -17,7 +17,7 @@ import com.ui.common.GPSTracker;
 public class TambahKosFrgament extends Fragment {
 
 	EditText edtLatitude, edtLongitude;
-	Button btnShowLocation;
+	Button btnShowLocation, btnSimpan;
 	// GPSTracker class
 	GPSTracker gps;
 
@@ -26,6 +26,8 @@ public class TambahKosFrgament extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_tambah_kos, container, false);
         btnShowLocation = (Button) rootView.findViewById(R.id.buttonGPS);
+        btnSimpan = (Button) rootView.findViewById(R.id.buttonSimpanTambahKos);
+        
         edtLatitude = (EditText) rootView.findViewById(R.id.edtlatitude);
         edtLongitude = (EditText) rootView.findViewById(R.id.edtlongitude);
         logicControl();
