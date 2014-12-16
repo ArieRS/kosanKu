@@ -499,22 +499,22 @@ containing a value of this type.
         public static final int splash=0x7f020034;
     }
     public static final class id {
-        public static final int action_settings=0x7f07004d;
+        public static final int action_settings=0x7f070055;
         public static final int adjust_height=0x7f070002;
         public static final int adjust_width=0x7f070001;
         public static final int book_now=0x7f070012;
         public static final int buttonBatalProfile=0x7f07003c;
-        public static final int buttonBatalTambahKos=0x7f07004a;
+        public static final int buttonBatalTambahKos=0x7f070053;
+        public static final int buttonGPS=0x7f070051;
         public static final int buttonLogin=0x7f070032;
         public static final int buttonSimpanProfile=0x7f07003a;
-        public static final int buttonSimpanTambahKos=0x7f070049;
+        public static final int buttonSimpanTambahKos=0x7f070052;
         public static final int buyButton=0x7f07000c;
         public static final int buy_now=0x7f070011;
         public static final int buy_with_google=0x7f070010;
         public static final int checkAC=0x7f07002a;
         public static final int checkKamarMandi=0x7f070029;
         public static final int checkLemari=0x7f070027;
-        public static final int checkMeja=0x7f07004b;
         public static final int checkMejaBelajar=0x7f070028;
         public static final int checkTempatTidur=0x7f070026;
         public static final int checkWifi=0x7f07002b;
@@ -523,14 +523,19 @@ containing a value of this type.
         public static final int donate_with_google=0x7f070013;
         public static final int drawer_layout=0x7f070017;
         public static final int edtAlamatProfile=0x7f070035;
-        public static final int edtAlamatTambahKos=0x7f070041;
-        public static final int edtJumlahKosTambahKos=0x7f070045;
+        public static final int edtAlamatTambahKos=0x7f070042;
+        public static final int edtFasilitasSekitarTambahKos=0x7f07004c;
+        public static final int edtFasilitasTambahKos=0x7f07004a;
+        public static final int edtHargaSewaTambahKos=0x7f070048;
+        public static final int edtJenisKosTambahKos=0x7f070046;
         public static final int edtNama=0x7f070034;
-        public static final int edtNamaTambahKos=0x7f07003f;
-        public static final int edtNoTelpnTambahKos=0x7f070043;
+        public static final int edtNamaTambahKos=0x7f070040;
+        public static final int edtNoTelpnTambahKos=0x7f070044;
         public static final int edtPassword=0x7f070031;
         public static final int edtTelpon=0x7f07003b;
         public static final int edtUsername=0x7f07002f;
+        public static final int edtlatitude=0x7f07004e;
+        public static final int edtlongitude=0x7f070050;
         public static final int frame_container=0x7f070018;
         public static final int grayscale=0x7f070015;
         public static final int holo_dark=0x7f070007;
@@ -547,32 +552,35 @@ containing a value of this type.
         public static final int normal=0x7f070003;
         public static final int production=0x7f070009;
         public static final int relImageCariKos=0x7f07001d;
-        public static final int relTambahKos=0x7f07003d;
+        public static final int relTambahKos=0x7f07003e;
         public static final int sandbox=0x7f07000a;
         public static final int satellite=0x7f070004;
-        public static final int seekBar1=0x7f070048;
         public static final int seekBarHarga=0x7f070020;
         public static final int selectionDetails=0x7f07000d;
         public static final int spinKelurahan=0x7f070024;
         public static final int spinKota=0x7f070023;
         public static final int spinProvinsi=0x7f070022;
-        public static final int splashscreen=0x7f07004c;
+        public static final int splashscreen=0x7f070054;
         public static final int strict_sandbox=0x7f07000b;
         public static final int terrain=0x7f070005;
         public static final int title=0x7f07001b;
         public static final int tvAlamat=0x7f070038;
-        public static final int tvAlamatTambahKos=0x7f070040;
+        public static final int tvAlamatTambahKos=0x7f070041;
         public static final int tvFasilitas=0x7f070025;
-        public static final int tvFasilitasTambahKos=0x7f070047;
-        public static final int tvHargaSewaTambahKos=0x7f070046;
-        public static final int tvJenisTambahKos=0x7f070044;
+        public static final int tvFasilitasSekitarTambahKos=0x7f07004b;
+        public static final int tvFasilitasTambahKos=0x7f070049;
+        public static final int tvHargaSewaTambahKos=0x7f070047;
+        public static final int tvJenisTambahKos=0x7f070045;
+        public static final int tvLatitude=0x7f07004d;
         public static final int tvLogin=0x7f07002d;
         public static final int tvLokasi=0x7f07001f;
+        public static final int tvLongitude=0x7f07004f;
         public static final int tvNama=0x7f070036;
-        public static final int tvNamaTambahKos=0x7f07003e;
-        public static final int tvNoTelpnTambahKos=0x7f070042;
+        public static final int tvNamaTambahKos=0x7f07003f;
+        public static final int tvNoTelpnTambahKos=0x7f070043;
         public static final int tvPassword=0x7f070030;
         public static final int tvRentangHarga=0x7f07001e;
+        public static final int tvTambahKos=0x7f07003d;
         public static final int tvTelpon=0x7f070039;
         public static final int tvUsername=0x7f07002e;
         public static final int txtLabel=0x7f07002c;
@@ -604,15 +612,15 @@ containing a value of this type.
         public static final int gtm_analytics=0x7f040000;
     }
     public static final class string {
-        public static final int Signup=0x7f060046;
+        public static final int Signup=0x7f060047;
         public static final int ac=0x7f060033;
         public static final int accept=0x7f060002;
         public static final int action_settings=0x7f060024;
         public static final int alamat=0x7f060038;
-        public static final int alamat_profile=0x7f06004d;
+        public static final int alamat_profile=0x7f06004e;
         public static final int app_name=0x7f060023;
-        public static final int batal=0x7f060041;
-        public static final int cari=0x7f060047;
+        public static final int batal=0x7f060042;
+        public static final int cari=0x7f060048;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
         public static final int common_android_wear_notification_needs_update_text=0x7f060009;
@@ -722,48 +730,53 @@ containing a value of this type.
         public static final int drawer_close=0x7f060027;
         public static final int drawer_open=0x7f060026;
         public static final int fasilitas=0x7f06002e;
-        public static final int fasilitas_kos=0x7f06003c;
-        public static final int fasilitas_sekitar=0x7f06003d;
-        public static final int harga_sewa=0x7f06003b;
+        public static final int fasilitas_kos=0x7f06003d;
+        public static final int fasilitas_sekitar=0x7f06003e;
+        public static final int gps_location=0x7f060052;
+        public static final int harga_sewa=0x7f06003c;
         public static final int hello_world=0x7f060025;
+        public static final int jenis_kos=0x7f06003b;
         public static final int jumlah_kamar=0x7f06003a;
         public static final int kamar_mandi_dalam=0x7f060032;
         public static final int kelurahan=0x7f06002d;
         public static final int kota=0x7f06002c;
+        public static final int latitude=0x7f060050;
         public static final int lemari=0x7f060030;
-        public static final int login=0x7f060048;
+        public static final int login=0x7f060049;
         public static final int lokasi=0x7f06002a;
+        public static final int longitude=0x7f060051;
         public static final int meja_belajar=0x7f060031;
         /**  Profile 
          */
-        public static final int nama=0x7f06004c;
+        public static final int nama=0x7f06004d;
         public static final int nama_kos=0x7f060037;
-        public static final int nearby=0x7f060049;
-        public static final int no_telp=0x7f06004e;
+        public static final int nearby=0x7f06004a;
+        public static final int no_telp=0x7f06004f;
         public static final int no_telpon=0x7f060039;
-        public static final int password=0x7f060044;
-        public static final int profil=0x7f060042;
+        public static final int password=0x7f060045;
+        public static final int profil=0x7f060043;
         public static final int provinsi=0x7f06002b;
         /**  fragment carikos 
          */
         public static final int rentang_harga=0x7f060029;
-        public static final int setting=0x7f06004a;
-        public static final int signin=0x7f060045;
-        public static final int simpan=0x7f060040;
+        public static final int setting=0x7f06004b;
+        public static final int signin=0x7f060046;
+        public static final int simpan=0x7f060041;
         public static final int store_picture_message=0x7f060001;
         public static final int store_picture_title=0x7f060000;
-        public static final int tag_lokasi_kos=0x7f06003f;
+        public static final int tag_lokasi_kos=0x7f060040;
         /**  tambah kos 
          */
         public static final int tambah_kos=0x7f060036;
         /**  Fasilitas 
          */
         public static final int tempat_tidur=0x7f06002f;
-        public static final int title_activity_fragment_lokasi_kos=0x7f06004b;
-        public static final int unggah_gambar=0x7f06003e;
+        public static final int title_activity_fragment_lokasi_kos=0x7f06004c;
+        public static final int unggah_gambar=0x7f06003f;
+        public static final int url_add_kosan=0x7f060053;
         /**  general 
          */
-        public static final int username=0x7f060043;
+        public static final int username=0x7f060044;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

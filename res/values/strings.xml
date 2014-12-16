@@ -59,6 +59,7 @@
     <string name="alamat">Alamat</string>
     <string name="no_telpon">No Telepon</string>
     <string name="jumlah_kamar">Jumlah Kamar</string>
+    <string name="jenis_kos">Jenis Kos</string>
     <string name="harga_sewa">Harga Sewa</string>
     <string name="fasilitas_kos">Fasilitas Kos</string>
     <string name="fasilitas_sekitar">Fasilitas Sekitar</string>
@@ -77,17 +78,17 @@
     <string name="nearby">Nearby</string>
     <string name="setting">Setting</string>
     <string name="title_activity_fragment_lokasi_kos">Map</string>
-<<<<<<< HEAD
+
     <!-- Profile -->
     <string name="nama">Nama</string>
     <string name="alamat_profile">Alamat</string>
     <string name="no_telp">No. Telepon</string>
-=======
+
     
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="gps_location">GPS Location</string>
     
     <string name="url_add_kosan">http://152.118.37.39/sig/application/add_kosan.php</string>
->>>>>>> 9329d8a446af6d08a8d8c7f9d09c00c9a04cca11
+
 </resources>
