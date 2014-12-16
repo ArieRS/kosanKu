@@ -75,4 +75,8 @@
     <string name="nearby">Nearby</string>
     <string name="setting">Setting</string>
     <string name="title_activity_fragment_lokasi_kos">Map</string>
+    
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="gps_location">GPS Location</string>
 </resources>
