@@ -133,20 +133,69 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/fasilitas_kos" />
 
-            <EditText
-                android:id="@+id/edtFasilitasTambahKos"
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/checkTempatTidur"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/tvFasilitasTambahKos"
-                android:layout_alignLeft="@+id/edtNamaTambahKos"
-                android:hint="@string/fasilitas_kos" />
+                android:layout_below="@+id/tvFasilitasTambahKos"
+                android:layout_marginTop="30dp"
+                android:checked="false"
+                android:text="@string/tempat_tidur" />
+
+            <CheckBox
+                android:id="@+id/checkLemari"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkTempatTidur"
+                android:layout_marginTop="10dp"
+                android:text="@string/lemari" />
+
+            <CheckBox
+                android:id="@+id/checkMejaBelajar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkLemari"
+                android:layout_marginTop="10dp"
+                android:checked="false"
+                android:text="@string/meja_belajar" />
+
+            <CheckBox
+                android:id="@+id/checkKamarMandi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkTempatTidur"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/checkTempatTidur"
+                android:checked="false"
+                android:text="@string/kamar_mandi_dalam" />
+
+            <CheckBox
+                android:id="@+id/checkAC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/checkMejaBelajar"
+                android:layout_alignLeft="@+id/checkKamarMandi"
+                android:layout_alignStart="@+id/checkKamarMandi"
+                android:checked="false"
+                android:text="@string/ac" />
+
+            <CheckBox
+                android:id="@+id/checkWifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkAC"
+                android:layout_alignStart="@+id/checkAC"
+                android:layout_alignTop="@+id/checkMejaBelajar"
+                android:checked="false"
+                android:text="@string/wifi" />
 
             <TextView
                 android:id="@+id/tvFasilitasSekitarTambahKos"
                 style="@style/text18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/edtFasilitasTambahKos"
+                android:layout_below="@+id/checkMejaBelajar"
                 android:layout_marginTop="15dp"
                 android:text="@string/fasilitas_sekitar" />
 
