@@ -43,42 +43,42 @@ public class HasilCariKosFragment extends Fragment {
 
 	}
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(
-				R.layout.list_view_fragment_cari_kos, container, false);
-		setLayout(inflater, rootView);
-		return rootView;
-	}
+//	@Override
+//	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//			Bundle savedInstanceState) {
+//		View rootView = inflater.inflate(
+//				R.layout.list_view_fragment_cari_kos, container, false);
+//		setLayout(inflater, rootView);
+//		return rootView;
+//	}
 
-	private void setLayout(LayoutInflater inflater, View resultView) {
-		listView = (ListView) resultView
-				.findViewById(R.id.ListFragmentHasilPencarian);
+//	private void setLayout(LayoutInflater inflater, View resultView) {
+//		listView = (ListView) resultView
+//				.findViewById(R.id.ListFragmentHasilPencarian);
+//
+//		HasilPencarianKosAdapter adapter = new HasilPencarianKosAdapter(
+//				mContext, R.layout.item_list_data_kosan,
+//				db.getLaporanLokasi(sessionManager.getIdKabupatenKota(),
+//						sessionManager.getIdProvinsi(),
+//						sessionManager.getIdLevelAdmin()));
+//		adapter.notifyDataSetChanged();
+//		listView.setAdapter(adapter);
+//	}
 
-		HasilPencarianKosAdapter adapter = new HasilPencarianKosAdapter(
-				mContext, R.layout.item_list_data_kosan,
-				db.getLaporanLokasi(sessionManager.getIdKabupatenKota(),
-						sessionManager.getIdProvinsi(),
-						sessionManager.getIdLevelAdmin()));
-		adapter.notifyDataSetChanged();
-		listView.setAdapter(adapter);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			actioncBar.setDisplayHomeAsUpEnabled(false);
-//			actioncBar.setHomeButtonEnabled(false);
-			Fragment fragment = new ReportDataFragment(mContext);
-			General.replaceFragment(fragment, getFragmentManager());
-			break;
-		default:
-			break;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		switch (item.getItemId()) {
+//		case android.R.id.home:
+//			actioncBar.setDisplayHomeAsUpEnabled(false);
+////			actioncBar.setHomeButtonEnabled(false);
+//			Fragment fragment = new ReportDataFragment(mContext);
+//			General.replaceFragment(fragment, getFragmentManager());
+//			break;
+//		default:
+//			break;
+//		}
+//		return super.onOptionsItemSelected(item);
+//	}
 	@Override
 	public void setInitialSavedState(SavedState state) {
 		super.setInitialSavedState(state);
