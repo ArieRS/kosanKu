@@ -1,7 +1,11 @@
 package com.ui.common;
 
 import java.util.ArrayList;
+
+import com.ui.model.database.mdFasilitasKos;
+import com.ui.model.database.mdInf_lokasi;
 import com.ui.model.database.mdKosan;
+import com.ui.model.database.mdTluFasilitas;
 import com.ui.model.sync.CariKosModelSync;
 
 import android.content.ContentValues;
@@ -169,7 +173,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	//////////////////////query/////////////
 	//////////////////////query/////////////
-	// 1 controller mdKosan
+	// Tabel Kosan
 		public long createMdKosan(mdKosan kosanModel) {
 			SQLiteDatabase db = this.getWritableDatabase();
 
@@ -361,8 +365,363 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			}
 			return value;
 		}
-	
-	
+		
+		//Tabel Tlu Fasilitas
+		public long createMdTluFasilitas(mdTluFasilitas TluFasilitasModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_TLU_ID, TluFasilitasModel.getId());
+			values.put(KEY_TLU_NAMA, TluFasilitasModel.getNama());			
+			// insert row
+			long todo_id = db.insertOrThrow(TABLE_TLU_FASILITAS, null, values);
+
+			return todo_id;
+		}
+		
+		public long updateMdTluFasilitas(mdTluFasilitas TluFasilitasModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_TLU_NAMA, TluFasilitasModel.getNama());
+			// insert row
+			long todo_id = db.update(TABLE_TLU_FASILITAS, values, KEY_TLU_ID
+					+ " = " +  TluFasilitasModel.getId(), null);
+			return todo_id;
+		}
+		
+		public long deleteMdTluFasilitas(int id) {
+			SQLiteDatabase db = this.getWritableDatabase();
+	 
+			long todo_id = db.delete(TABLE_TLU_FASILITAS, KEY_TLU_ID
+					+ " = " + id, null);
+			return todo_id;
+		}
+		
+		public ArrayList<String> getAllTluNamaFasilitas() {
+			ArrayList<String> listString = new ArrayList<String>();
+			String query = "SELECT " + KEY_TLU_NAMA + " FROM "
+					+ TABLE_TLU_FASILITAS;
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(query, null);
+
+			if (c.moveToFirst()) {
+				do {
+					String namaTluFasilitas = "";
+					namaTluFasilitas = c.getString(c.getColumnIndex(KEY_TLU_NAMA));
+
+					// adding to todo list
+					listString.add(namaTluFasilitas);
+				} while (c.moveToNext());
+			}
+			return listString;
+		}
+		
+		public mdTluFasilitas getTluFasilitasById(int id) {
+			String selectQuery = "SELECT  * FROM " + TABLE_TLU_FASILITAS + " WHERE "
+					+ KEY_ID + " = " + id + ";";
+			mdTluFasilitas value = new mdTluFasilitas();
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+			if (c.moveToFirst()) {
+				value.setId(c.getInt(c.getColumnIndex(KEY_TLU_ID)));
+				value.setNama(c.getString(c.getColumnIndex(KEY_TLU_NAMA)));								
+			}
+			return value;
+		}
+		
+		public void deleteTluFasilitasById(int id) {
+			SQLiteDatabase db = this.getWritableDatabase();
+			db.delete(TABLE_TLU_FASILITAS, KEY_ID + " = ?",
+					new String[] { String.valueOf(id) });
+		}
+		
+		public int updateToDo(mdTluFasilitas TluFasilitasModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_TLU_ID, TluFasilitasModel.getId());
+			values.put(KEY_TLU_NAMA, TluFasilitasModel.getNama());			
+
+			// updating row
+			return db
+					.update(TABLE_TLU_FASILITAS, values, KEY_ID + " = ?",
+							new String[] { String.valueOf(TluFasilitasModel.getId()) });
+		}
+		
+		public ArrayList<mdTluFasilitas> getAllTluFasilitas() {
+			ArrayList<mdTluFasilitas> fasilitasList = new ArrayList<mdTluFasilitas>();
+			String selectQuery = "SELECT  * FROM " + TABLE_TLU_FASILITAS;
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+
+			// looping through all rows and adding to list
+			if (c.moveToFirst()) {
+				do {
+					mdTluFasilitas value = new mdTluFasilitas();
+					value.setId(c.getInt(c.getColumnIndex(KEY_TLU_ID)));
+					value.setNama(c.getString(c.getColumnIndex(KEY_TLU_NAMA)));					
+					// adding to todo list
+					fasilitasList.add(value);
+				} while (c.moveToNext());
+			}
+			return fasilitasList;
+		}
+		
+		public int getIdTluFasilitas(String namaFasilitas) {
+			ArrayList<mdTluFasilitas> tluFasilitasList = new ArrayList<mdTluFasilitas>();
+			String selectQuery = "SELECT " + KEY_TLU_ID + " FROM "
+					+ TABLE_TLU_FASILITAS + " WHERE " + KEY_TLU_NAMA + " = '"
+					+ namaFasilitas + "' ;";
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+
+			// looping through all rows and adding to list
+			int value = 0;
+			if (c.moveToFirst()) {
+				value = (c.getInt(c.getColumnIndex(KEY_TLU_ID)));
+			}
+			return value;
+		}
+		
+		//Tabel Fasilitas Kos
+		public long createMdFasilitasKos(mdFasilitasKos FasilitasKosModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_FASILITAS_ID, FasilitasKosModel.getId());
+			values.put(KEY_FASILITAS_ID_KOS, FasilitasKosModel.getId_Kos());
+			values.put(KEY_FASILITAS_ID_FASILITAS, FasilitasKosModel.getId_Fasilitas());			
+			// insert row
+			long todo_id = db.insertOrThrow(TABLE_FASILITAS_KOS, null, values);
+
+			return todo_id;
+		}
+		
+		public long updateMdFasilitasKos(mdKosan FasilitasKosModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_FASILITAS_ID_FASILITAS, FasilitasKosModel.getNama());
+			// insert row
+			long todo_id = db.update(KEY_FASILITAS_ID_FASILITAS, values, KEY_FASILITAS_ID
+					+ " = " +  FasilitasKosModel.getId(), null);
+			return todo_id;
+		}
+		
+		public long deleteMdFasilitasKos(int id) {
+			SQLiteDatabase db = this.getWritableDatabase();
+	 
+			long todo_id = db.delete(KEY_FASILITAS_ID_FASILITAS, KEY_FASILITAS_ID
+					+ " = " + id, null);
+			return todo_id;
+		}
+		
+		
+		public mdFasilitasKos getFasilitasById(int id) {
+			String selectQuery = "SELECT  * FROM " + KEY_FASILITAS_ID_FASILITAS + " WHERE "
+					+ KEY_FASILITAS_ID + " = " + id + ";";
+			mdFasilitasKos value = new mdFasilitasKos();
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+			if (c.moveToFirst()) {
+				value.setId(c.getInt(c.getColumnIndex(KEY_FASILITAS_ID)));
+				value.setId_Kos(c.getInt(c.getColumnIndex(KEY_FASILITAS_ID_KOS)));
+				value.setId_Fasilitas(c.getInt(c.getColumnIndex(KEY_FASILITAS_ID_FASILITAS)));							
+			}
+			return value;
+		}
+		
+		public void deleteFasilitasKosById(int id) {
+			SQLiteDatabase db = this.getWritableDatabase();
+			db.delete(TABLE_FASILITAS_KOS, KEY_FASILITAS_ID + " = ?",
+					new String[] { String.valueOf(id) });
+		}
+		
+		public int updateToDo(mdFasilitasKos FasilitasKosModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_FASILITAS_ID, FasilitasKosModel.getId());
+			values.put(KEY_FASILITAS_ID_KOS, FasilitasKosModel.getId_Kos());
+			values.put(KEY_FASILITAS_ID_FASILITAS, FasilitasKosModel.getId_Fasilitas());
+
+			// updating row
+			return db
+					.update(TABLE_FASILITAS_KOS, values, KEY_FASILITAS_ID + " = ?",
+							new String[] { String.valueOf(FasilitasKosModel.getId()) });
+		}
+		
+		public ArrayList<mdFasilitasKos> getAllFasilitas() {
+			ArrayList<mdFasilitasKos> kosList = new ArrayList<mdFasilitasKos>();
+			String selectQuery = "SELECT  * FROM " + TABLE_FASILITAS_KOS;
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+
+			// looping through all rows and adding to list
+			if (c.moveToFirst()) {
+				do {
+					mdFasilitasKos value = new mdFasilitasKos();
+					value.setId(c.getInt(c.getColumnIndex(KEY_FASILITAS_ID)));
+					value.setId_Kos(c.getInt(c.getColumnIndex(KEY_FASILITAS_ID_KOS)));
+					value.setId_Fasilitas(c.getInt(c.getColumnIndex(KEY_FASILITAS_ID_FASILITAS)));
+					// adding to todo list
+					kosList.add(value);
+				} while (c.moveToNext());
+			}
+			return kosList;
+		}					
+		
+		//Tabel Inf_Lokasi
+		public long createMdInf_lokasi(mdInf_lokasi infLokasiModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_LOKASI_ID, infLokasiModel.getLokasi_ID());
+			values.put(KEY_KODE, infLokasiModel.getLokasi_kode());
+			values.put(KEY_LOKASI_NAMA, infLokasiModel.getLokasi_nama());
+			values.put(KEY_LOKASI_PROPINSI, infLokasiModel.getLokasi_propinsi());
+			values.put(KEY_LOKASI_KABUPATENKOTA, infLokasiModel.getLokasi_kabupatenkota());
+			values.put(KEY_LOKASIKECAMATAN, infLokasiModel.getLokasi_kecamatan());
+			values.put(KEY_KELURAHAN, infLokasiModel.getLokasi_kelurahan());			
+			// insert row
+			long todo_id = db.insertOrThrow(TABLE_INF_LOKASI, null, values);
+
+			return todo_id;
+		}
+			
+		
+		
+		public long updateMdInf_lokasi(mdInf_lokasi infLokasiModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_LOKASI_NAMA, infLokasiModel.getLokasi_nama());
+			// insert row
+			long todo_id = db.update(TABLE_INF_LOKASI, values, KEY_LOKASI_ID
+					+ " = " +  infLokasiModel.getLokasi_ID(), null);
+			return todo_id;
+		}
+		
+		public long deleteMdInf_Lokasi(int id) {
+			SQLiteDatabase db = this.getWritableDatabase();
+	 
+			long todo_id = db.delete(TABLE_INF_LOKASI, KEY_LOKASI_ID
+					+ " = " + id, null);
+			return todo_id;
+		}
+		
+		public ArrayList<String> getAllNamaInfLokasi() {
+			ArrayList<String> listString = new ArrayList<String>();
+			String query = "SELECT " + KEY_LOKASI_NAMA + " FROM "
+					+ TABLE_INF_LOKASI;
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(query, null);
+
+			if (c.moveToFirst()) {
+				do {
+					String namaLokasi = "";
+					namaLokasi = c.getString(c.getColumnIndex(KEY_LOKASI_NAMA));
+
+					// adding to todo list
+					listString.add(namaLokasi);
+				} while (c.moveToNext());
+			}
+			return listString;
+		}
+		
+		public mdInf_lokasi getLokasiById(int id) {
+			String selectQuery = "SELECT  * FROM " + TABLE_INF_LOKASI + " WHERE "
+					+ KEY_LOKASI_ID + " = " + id + ";";
+			mdInf_lokasi value = new mdInf_lokasi();
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+			if (c.moveToFirst()) {
+				value.setLokasi_ID(c.getInt(c.getColumnIndex(KEY_LOKASI_ID)));
+				value.setLokasi_kode(c.getString(c.getColumnIndex(KEY_KODE)));
+				value.setLokasi_nama(c.getString(c.getColumnIndex(KEY_LOKASI_NAMA)));
+				value.setLokasi_propinsi(c.getString(c.getColumnIndex(KEY_LOKASI_PROPINSI)));
+				value.setLokasi_kabupatenkota(c.getString(c.getColumnIndex(KEY_LOKASI_KABUPATENKOTA)));
+				value.setLokasi_kecamatan(c.getString(c.getColumnIndex(KEY_LOKASIKECAMATAN)));
+				value.setLokasi_kelurahan(c.getString(c.getColumnIndex(KEY_KELURAHAN)));
+			}
+			return value;
+		}		
+		
+		public void deleteInfLokasiById(int id) {
+			SQLiteDatabase db = this.getWritableDatabase();
+			db.delete(TABLE_INF_LOKASI, KEY_LOKASI_ID + " = ?",
+					new String[] { String.valueOf(id) });
+		}
+		
+		public int updateToDo(mdInf_lokasi infLokasiModel) {
+			SQLiteDatabase db = this.getWritableDatabase();
+
+			ContentValues values = new ContentValues();
+			values.put(KEY_LOKASI_ID, infLokasiModel.getLokasi_ID());
+			values.put(KEY_KODE, infLokasiModel.getLokasi_kode());
+			values.put(KEY_LOKASI_NAMA, infLokasiModel.getLokasi_nama());
+			values.put(KEY_LOKASI_PROPINSI, infLokasiModel.getLokasi_propinsi());
+			values.put(KEY_LOKASI_KABUPATENKOTA, infLokasiModel.getLokasi_kabupatenkota());
+			values.put(KEY_LOKASIKECAMATAN, infLokasiModel.getLokasi_kecamatan());
+			values.put(KEY_KELURAHAN, infLokasiModel.getLokasi_kelurahan());
+
+			// updating row
+			return db
+					.update(TABLE_INF_LOKASI, values, KEY_LOKASI_ID + " = ?",
+							new String[] { String.valueOf(infLokasiModel.getLokasi_ID()) });
+		}
+		
+		public ArrayList<mdInf_lokasi> getAllInfLokasi() {
+			ArrayList<mdInf_lokasi> lokasiList = new ArrayList<mdInf_lokasi>();
+			String selectQuery = "SELECT  * FROM " + TABLE_INF_LOKASI;
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+
+			// looping through all rows and adding to list
+			if (c.moveToFirst()) {
+				do {
+					mdInf_lokasi value = new mdInf_lokasi();
+					value.setLokasi_ID(c.getInt(c.getColumnIndex(KEY_LOKASI_ID)));
+					value.setLokasi_kode(c.getString(c.getColumnIndex(KEY_KODE)));
+					value.setLokasi_nama(c.getString(c.getColumnIndex(KEY_LOKASI_NAMA)));
+					value.setLokasi_propinsi(c.getString(c.getColumnIndex(KEY_LOKASI_PROPINSI)));
+					value.setLokasi_kabupatenkota(c.getString(c.getColumnIndex(KEY_LOKASI_KABUPATENKOTA)));
+					value.setLokasi_kecamatan(c.getString(c.getColumnIndex(KEY_LOKASIKECAMATAN)));
+					value.setLokasi_kelurahan(c.getString(c.getColumnIndex(KEY_KELURAHAN)));
+
+					// adding to todo list
+					lokasiList.add(value);
+				} while (c.moveToNext());
+			}
+			return lokasiList;
+		}
+		
+		public int getIdInfKos(String namaInfKos) {
+			ArrayList<mdInf_lokasi> inf_lokasiList = new ArrayList<mdInf_lokasi>();
+			String selectQuery = "SELECT " + KEY_LOKASI_ID + " FROM "
+					+ TABLE_INF_LOKASI + " WHERE " + KEY_LOKASI_NAMA + " = '"
+					+ namaInfKos + "' ;";
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+
+			// looping through all rows and adding to list
+			int value = 0;
+			if (c.moveToFirst()) {
+				value = (c.getInt(c.getColumnIndex(KEY_LOKASI_ID)));
+			}
+			return value;
+		}
 	
 	///////////////////end query/////////////
 	//////////////////end query/////////////
