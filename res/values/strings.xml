@@ -78,7 +78,8 @@
     <string name="nearby">Nearby</string>
     <string name="setting">Setting</string>
     <string name="title_activity_fragment_lokasi_kos">Map</string>
-
+	<string name="insert_photo">Insert Photo</string>
+    
     <!-- Profile -->
     <string name="nama">Nama</string>
     <string name="alamat_profile">Alamat</string>

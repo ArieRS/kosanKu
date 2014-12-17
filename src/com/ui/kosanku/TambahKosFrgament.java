@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -24,10 +28,12 @@ import com.ui.common.GPSTracker;
 public class TambahKosFrgament extends Fragment {
 
 	EditText edtLatitude, edtLongitude;
-	Button btnShowLocation, btnSimpan, btnCancel;
+	Button btnShowLocation, btnSimpan, btnCancel, buttonBrowsePhoto;
+	ImageView tambahKosImage;
 	// GPSTracker class
 	GPSTracker gps;
-
+	private String SelectedImagePath ="";
+	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -35,6 +41,8 @@ public class TambahKosFrgament extends Fragment {
         btnShowLocation = (Button) rootView.findViewById(R.id.buttonGPS);
         btnSimpan = (Button) rootView.findViewById(R.id.buttonSimpanTambahKos);
         btnCancel = (Button) rootView.findViewById(R.id.buttonBatalTambahKos);
+        buttonBrowsePhoto = (Button) rootView.findViewById(R.id.buttonBrowsePhoto);
+        tambahKosImage = (ImageView) rootView.findViewById(R.id.imageTambahKos);
         
         edtLatitude = (EditText) rootView.findViewById(R.id.edtlatitude);
         edtLongitude = (EditText) rootView.findViewById(R.id.edtlongitude);
@@ -68,7 +76,7 @@ public class TambahKosFrgament extends Fragment {
 			}
 		});
 		
-		btnCancel.setOnClickListener(new View.OnClickListener() {
+		buttonBrowsePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -131,15 +139,14 @@ public class TambahKosFrgament extends Fragment {
 //	            }
 //	        });
 	}
-	
-//	@Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(resultCode==RESULT_OK){
-//            Uri selectedImageUri= data.getData();
-//
-//            SelectedImagePath= Utils.getRealPathFromURI(AddEmployeeActivity.this,selectedImageUri);
-//            imgPhoto.setImageURI(selectedImageUri);
-//        }
-//    }
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode==getActivity().RESULT_OK){
+			Uri selectedImageUri= data.getData();
+			tambahKosImage.setImageURI(selectedImageUri);
+			//SelectedImagePath=  Utils.getRealPathFromURI(getActivity(),selectedImageUri);
+		}
+	}
 }

@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -193,11 +194,29 @@
 
             <Button
                 android:id="@+id/buttonGPS"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edtlongitude"
                 android:layout_marginTop="15dp"
                 android:text="@string/gps_location" />
+
+            <ImageView
+                android:id="@+id/imageTambahKos"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/buttonGPS"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_photos" />
+
+            <Button
+                android:id="@+id/buttonBrowsePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/edtlongitude"
+                android:layout_below="@+id/buttonGPS"
+                android:layout_marginTop="15dp"
+                android:text="@string/insert_photo" />
         </RelativeLayout>
         <!-- </ScrollView> -->
 
