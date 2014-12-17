@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.android.gms.internal.mx;
 import com.ui.adapter.NavDrawerListAdapter;
 import com.ui.common.SessionManager;
 import com.ui.model.NavDrawerItem;
@@ -179,19 +180,19 @@ public class MainActivity extends Activity {
 		String menuString = navMenuTitles[position];
 		
 		if (menuString.equalsIgnoreCase("Home")) {
-			fragment = new CariKosFragment();
+			fragment = new CariKosFragment(mContext);
 		}
 		else if (menuString.equalsIgnoreCase("Login")) {
-			fragment = new LoginFragment();
+			fragment = new LoginFragment(mContext);
 		}
 		else if (menuString.equalsIgnoreCase("Profile")) {
-			fragment = new ProfilFragment();
+			fragment = new ProfilFragment(mContext);
 		}
 		else if (menuString.equalsIgnoreCase("Tambah Kos")) {
-			fragment = new TambahKosFrgament();
+			fragment = new TambahKosFrgament(mContext);
 		}
 		else if (menuString.equalsIgnoreCase("Nearby")) {
-			fragment = new LokasiKosDetailFragment();
+			fragment = new LokasiKosDetailFragment(mContext);
 		}
 		else if (menuString.equalsIgnoreCase("Logout")) {
 			new AlertDialog.Builder(this)

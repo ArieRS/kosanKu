@@ -9,6 +9,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +20,11 @@ import android.widget.Toast;
 public class LokasiKosDetailFragment extends Fragment{
 	// Google Map
 	GoogleMap googleMap;
+	Context mContext;
+	
+	public LokasiKosDetailFragment(Context context) {
+		mContext = context;
+	}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

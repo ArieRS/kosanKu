@@ -3,6 +3,7 @@ package com.ui.kosanku;
 import java.util.ArrayList;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -33,6 +34,11 @@ public class TambahKosFrgament extends Fragment {
 	// GPSTracker class
 	GPSTracker gps;
 	private String SelectedImagePath ="";
+	Context mContext;
+	
+	public TambahKosFrgament(Context context) {
+		mContext = context;
+	}
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -2,6 +2,7 @@ package com.ui.kosanku;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,8 +19,10 @@ public class LoginFragment extends Fragment {
 	EditText edtusername, edtpass;
 	Button buttonLogin;
 	SessionManager session;
-	
-	public LoginFragment(){}
+	Context mContext;
+	public LoginFragment(Context context){
+		mContext = context;
+	}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

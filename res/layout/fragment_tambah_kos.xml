@@ -134,7 +134,7 @@
                 android:text="@string/fasilitas_kos" />
 
             <CheckBox
-                android:id="@+id/checkTempatTidur"
+                android:id="@+id/checkTempatTidurTambahTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvFasilitasTambahKos"
@@ -143,50 +143,50 @@
                 android:text="@string/tempat_tidur" />
 
             <CheckBox
-                android:id="@+id/checkLemari"
+                android:id="@+id/checkLemariTambahTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/checkTempatTidur"
+                android:layout_below="@+id/checkTempatTidurTambahTidur"
                 android:layout_marginTop="10dp"
                 android:text="@string/lemari" />
 
             <CheckBox
-                android:id="@+id/checkMejaBelajar"
+                android:id="@+id/checkMejaBelajarTambahTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/checkLemari"
+                android:layout_below="@+id/checkLemariTambahTidur"
                 android:layout_marginTop="10dp"
                 android:checked="false"
                 android:text="@string/meja_belajar" />
 
             <CheckBox
-                android:id="@+id/checkKamarMandi"
+                android:id="@+id/checkKamarMandiTambahTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/checkTempatTidur"
+                android:layout_alignBaseline="@+id/checkTempatTidurTambahTidur"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/checkTempatTidur"
+                android:layout_toRightOf="@+id/checkTempatTidurTambahTidur"
                 android:checked="false"
                 android:text="@string/kamar_mandi_dalam" />
 
             <CheckBox
-                android:id="@+id/checkAC"
+                android:id="@+id/checkACTambahTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/checkMejaBelajar"
-                android:layout_alignLeft="@+id/checkKamarMandi"
-                android:layout_alignStart="@+id/checkKamarMandi"
+                android:layout_above="@+id/checkMejaBelajarTambahTidur"
+                android:layout_alignLeft="@+id/checkKamarMandiTambahTidur"
+                android:layout_alignStart="@+id/checkKamarMandiTambahTidur"
                 android:checked="false"
                 android:text="@string/ac" />
 
             <CheckBox
-                android:id="@+id/checkWifi"
+                android:id="@+id/checkWifiTambahTidur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/checkAC"
-                android:layout_alignStart="@+id/checkAC"
-                android:layout_alignTop="@+id/checkMejaBelajar"
+                android:layout_alignLeft="@+id/checkACTambahTidur"
+                android:layout_alignStart="@+id/checkACTambahTidur"
+                android:layout_alignTop="@+id/checkMejaBelajarTambahTidur"
                 android:checked="false"
                 android:text="@string/wifi" />
 
@@ -195,7 +195,7 @@
                 style="@style/text18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/checkMejaBelajar"
+                android:layout_below="@+id/checkMejaBelajarTambahTidur"
                 android:layout_marginTop="15dp"
                 android:text="@string/fasilitas_sekitar" />
 

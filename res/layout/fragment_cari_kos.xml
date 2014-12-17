@@ -124,13 +124,14 @@
         android:layout_alignStart="@+id/checkAC" />
 
     <Button
+        android:id="@+id/buttonCari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cari"
-        android:layout_below="@+id/checkMejaBelajar"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/checkMejaBelajar"
         android:layout_marginRight="30dp"
-        android:textSize="18dp"/>
+        android:text="@string/cari"
+        android:textSize="18dp" />
 
     <SeekBar
         android:id="@+id/seekBarHarga"
