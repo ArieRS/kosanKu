@@ -78,6 +78,7 @@
     <string name="nearby">Nearby</string>
     <string name="setting">Setting</string>
     <string name="title_activity_fragment_lokasi_kos">Map</string>
+    <string name="hasil_pencarian">Hasil Pencarian Kos</string>
 
     <!-- Profile -->
     <string name="nama">Nama</string>

@@ -1,6 +1,6 @@
 package com.ui.model.sync;
 
-public class AddDataKosModelSync {
+public class DataKosModelSync {
 	String nama_kos;
 	String alamat;
 	String fasilitas;

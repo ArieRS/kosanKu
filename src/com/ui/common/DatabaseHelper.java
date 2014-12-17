@@ -1,5 +1,9 @@
 package com.ui.common;
 
+import java.util.ArrayList;
+
+import com.ui.model.sync.CariKosModelSync;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -8,9 +12,8 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-	public DatabaseHelper(Context context, String name, CursorFactory factory,
-			int version) {
-		super(context, name, factory, version);		
+	public DatabaseHelper(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);		
 	}
 	// Database Name
 	private static final String DATABASE_NAME = "db_sig";
@@ -170,6 +173,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	//////////////////////query/////////////
 	//////////////////////query/////////////
 	
+	//Query Cari Kos
+	//public ArrayList<CariKosModelSync> getDataKos()
 	
 	
 	///////////////////end query/////////////
