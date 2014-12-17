@@ -336,6 +336,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			return value;
 		}
 		
+		public mdKosan getKosanByKeyword(int harga_min, int harga_max, String fasilitas) {
+			String selectQuery = "SELECT  * FROM " + TABLE_KOSAN + " WHERE "
+					+ KEY_HARGA_MIN + " = " + harga_min + " OR " + KEY_HARGA_MAX +" = " + harga_max 
+					+ " OR " + KEY_FASILITAS + " LIKE " +"%"+ fasilitas +"%"+ ";";
+			mdKosan value = new mdKosan();
+
+			SQLiteDatabase db = this.getReadableDatabase();
+			Cursor c = db.rawQuery(selectQuery, null);
+			if (c.moveToFirst()) {
+				value.setId(c.getInt(c.getColumnIndex(KEY_ID)));
+				value.setNama(c.getString(c.getColumnIndex(KEY_NAMA)));
+				value.setAlamat(c.getString(c.getColumnIndex(KEY_ALAMAT)));
+				value.setHarga_min(c.getInt(c.getColumnIndex(KEY_HARGA_MIN)));
+				value.setHarga_max(c.getInt(c.getColumnIndex(KEY_HARGA_MAX)));
+				value.setFoto(c.getString(c.getColumnIndex(KEY_FOTO)));
+				value.setJumlahKamar(c.getInt(c.getColumnIndex(KEY_JUMLAH_KAMAR)));
+				value.setFasilitas(c.getString(c.getColumnIndex(KEY_FASILITAS)));
+				value.setLongitude(c.getDouble(c.getColumnIndex(KEY_LONGITUDE)));
+				value.setLatitude(c.getDouble(c.getColumnIndex(KEY_LATITUDE)));
+				value.setNamaCp(c.getString(c.getColumnIndex(KEY_NAMA_CP)));
+				value.setTelpCp(c.getString(c.getColumnIndex(KEY_TELP_CP)));
+				value.setId_lokasi(c.getInt(c.getColumnIndex(KEY_ID_LOKASI)));				
+			}
+			return value;
+		}
 	
 	
 	
